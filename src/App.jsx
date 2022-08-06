@@ -5,7 +5,6 @@ import { CreateInputs } from "./components/Inputs";
 import { CreateSelects } from "./components/Selects";
 
 
-
 function App() {
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
@@ -16,10 +15,11 @@ function App() {
   const getRates = async () => {
     try {
       const data = await fetch(
-        'https://api.apilayer.com/fixer/latest?base=UAH&apikey=lYjik8c7qGfWghIPqmJynSxwtx7FRbNt'
+        'https://api.apilayer.com/fixer/latest?base=UAH&apikey=0jQOyTt8eM39DnlMeCzYmmz2Qe537CxK'
       );
       const response = await data.json();
       setRates(response.rates);
+      console.log(response);
     } catch (err) {
       alert(err);
     }
@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     if (!!rates) {
-      handleAmount1Change(1);
+        handleAmount1Change(1);
     }
   }, [rates]);
 
