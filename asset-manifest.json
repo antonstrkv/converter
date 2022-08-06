@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/converter/static/js/main.df85667b.js",
+    "index.html": "/converter/index.html",
+    "main.df85667b.js.map": "/converter/static/js/main.df85667b.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.df85667b.js"
+  ]
+}
