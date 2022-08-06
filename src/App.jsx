@@ -5,6 +5,7 @@ import { CreateInputs } from "./components/Inputs";
 import { CreateSelects } from "./components/Selects";
 
 
+
 function App() {
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
@@ -19,7 +20,6 @@ function App() {
       );
       const response = await data.json();
       setRates(response.rates);
-      console.log(response);
     } catch (err) {
       alert(err);
     }
@@ -46,7 +46,7 @@ function App() {
   }
 
   const handleCurrency1Change = (currency1) => {
-    setAmount1(format(amount1 * rates[currency2] / rates[currency1]));
+    setAmount1(format(amount2 * rates[currency1] / rates[currency2]));
     setCurrency1(currency1);
   }
 
@@ -56,7 +56,7 @@ function App() {
   }
 
   const handleCurrency2Change = (currency2) => {
-    setAmount2(format(amount2 * rates[currency1] / rates[currency2]));
+    setAmount2(format(amount1 * rates[currency2] / rates[currency1]));
     setCurrency2(currency2);
   }
 
